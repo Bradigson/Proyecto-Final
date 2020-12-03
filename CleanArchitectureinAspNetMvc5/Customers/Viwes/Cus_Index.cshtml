@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CleanArchitectureinAspNetMvc5.Customers.Models.Cliente>
+@{
+    ViewBag.Title = "Cliente";
+}
+
+
+<h2>Cliente</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.edad)
+
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edad)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item })
+            </td>
+        </tr>
+    }
+
+
+
+
+</table>
